@@ -1,0 +1,18 @@
+{
+  "name": "GetCategories",
+  "version": "0.0.1",
+  "main": "getCategories.js",
+  "description": "P360 getCategories implementation.",
+  "private": true,
+  "author": {
+    "name": "Infoverity, LLC"
+  },
+  "dependencies": {
+    "node-rest-client": "3.1.0"
+  },
+  "scripts": {
+    "zip": "rm -f getCategories.zip; zip -q -r getCategories.zip getCategories.js package.json node_modules",
+    "update": "wsk -i action update getCategories --kind nodejs:6 --web true getCategories.zip",
+    "deploy": "npm run zip; npm run update"
+  }
+}
